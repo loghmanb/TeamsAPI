@@ -21,5 +21,5 @@ class TeamViewSet(viewsets.ModelViewSet):
             teams = teams.filter(name__icontains=name)
         country = self.request.query_params.get("country")
         if country:
-            teams = teams.filter(league__country__name__icontains=country)
+            teams = teams.filter(country__name__icontains=country)
         return teams
